@@ -9,6 +9,9 @@ let package = Package(
       name: "SingleHtmlWriter",
       targets: ["SingleHtmlWriter"])
   ],
+  dependencies: [
+    .package(url: "https://github.com/realm/SwiftLint.git", from: "0.55.0")
+  ],
   targets: [
     .target(
       name: "SingleHtmlWriter"),
