@@ -6,11 +6,15 @@ public typealias JsPathToScriptTag = (String) -> String
 public func js2scriptFromEncoder(
   encoder: @escaping DataToBase64 = data2base64Default
 ) -> JavaScriptToScriptTag {
-  let prefix: String = "<script src=\"data:text/javascript;base64,"
+  let prefix: String = "<script src=\""
   let suffix: String = "\"></script>"
+  let d2e: DataToEncoded = data2encodedFromType(
+    contentType: "text/javascript",
+    encoder: encoder
+  )
   return {
     let jsData: Foundation.Data = $0
-    let encoded: String = encoder(jsData)
+    let encoded: String = d2e(jsData)
     return prefix + encoded + suffix
   }
 }
