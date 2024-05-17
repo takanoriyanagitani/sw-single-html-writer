@@ -32,3 +32,19 @@ public func pngpath2img(
 }
 
 public let pngpath2imgDefault: PngPathToImgTag = pngpath2img()
+
+/// A png image which can be converted to `Foundation.Data`
+public protocol ImageToPngData {
+  func toPngData() -> Foundation.Data?
+}
+
+extension ImageToPngData {
+  /// Tries to convert to an img tag.
+  func toImageTag(png2img: PngToImgTag) -> String? {
+    let opngData: Foundation.Data? = self.toPngData()
+    guard let pngData = opngData else {
+      return nil
+    }
+    return png2img(pngData)
+  }
+}
