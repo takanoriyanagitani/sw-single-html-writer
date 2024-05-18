@@ -1,5 +1,6 @@
 import Foundation
 
+/// Converts a `Foundation.Data` to a base64 `String`.
 public typealias DataToBase64 = (Foundation.Data) -> String
 
 public func data2base64fromOptions(
