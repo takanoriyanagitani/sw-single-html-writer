@@ -3,6 +3,7 @@ import Foundation
 /// Converts a `Foundation.Data` to a base64 `String`.
 public typealias DataToBase64 = (Foundation.Data) -> String
 
+/// Creates a ``DataToBase64`` using specified options.
 public func data2base64fromOptions(
   options: Foundation.Data.Base64EncodingOptions = []
 ) -> DataToBase64 {
