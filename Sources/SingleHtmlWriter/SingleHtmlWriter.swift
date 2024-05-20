@@ -13,6 +13,7 @@ public func data2base64fromOptions(
   }
 }
 
+/// A ``DataToBase64`` using empty options.
 public let data2base64Default: DataToBase64 = data2base64fromOptions()
 
 public typealias DataToEncoded = (Foundation.Data) -> String
