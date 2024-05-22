@@ -19,6 +19,7 @@ public let data2base64Default: DataToBase64 = data2base64fromOptions()
 /// Converts a `Foundation.Data` to a data URI scheme `String`.
 public typealias DataToEncoded = (Foundation.Data) -> String
 
+/// Creates a ``DataToEncoded`` using ``DataToBase64``.
 public func data2encodedFromType(
   contentType: String,
   encoder: @escaping DataToBase64 = data2base64Default
