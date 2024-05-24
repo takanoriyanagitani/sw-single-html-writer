@@ -3,6 +3,7 @@ import Foundation
 public typealias JavaScriptToScriptTag = (Foundation.Data) -> String
 public typealias JsPathToScriptTag = (String) -> String
 
+/// Creates a ``JavaScriptToScriptTag`` using a ``DataToBase64``.
 public func js2scriptFromEncoder(
   encoder: @escaping DataToBase64 = data2base64Default
 ) -> JavaScriptToScriptTag {
